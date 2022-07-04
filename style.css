@@ -1,0 +1,278 @@
+:root {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Tahoma;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --bg-primary: #f58634;
+  --bg-secondary: #f58634;
+  --background-color: #BFDD99;
+
+  /* --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --background-color: #444444; */
+
+  --transition-speed: 600ms;
+}
+
+.dark {
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --bg-primary: #f58634;
+  --bg-secondary: #f58634;
+  --background-color: #f58634;
+}
+
+.light {
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --bg-primary: #f58634;
+  --bg-secondary: #f58634;
+  --background-color: #f58634;
+}
+
+.solar {
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --bg-primary: #f58634;
+  --bg-secondary: #f58634;
+  --background-color: #f58634;
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  /* :tamanho da barra de rolagem */
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  /* :cor de fundo da barra de rolagem */
+  background: var(--bg-primary);
+}
+
+body::-webkit-scrollbar-thumb {
+  /* :mudando a cor da barra de rolagem de dentro */
+  background: #000000;
+}
+
+.navbar::-webkit-scrollbar {
+  width: 0rem;
+}
+
+.navbar::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+main {
+  /* margin-left: 5rem; */
+  padding: 2.5% 10% 15% 15%;
+
+  color: var(--text-primary);
+  background: var(--background-color);
+}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 600ms ease;
+  overflow: scroll;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+/* Cor do svg */
+.fa-primary {
+  color: #000000;
+}
+
+.fa-secondary {
+  color: #000000;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.logo-text {
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+img {
+  margin: auto;
+  display: block;
+}
+
+hr {
+  color: #5b2eeb  ;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  main {
+    padding: 2rem;
+    padding-bottom: 10rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+
+    display: none;
+  }
+
+  .container {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  img {
+    height: 20%;
+  }
+
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 20rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo svg {
+    margin-left: 15rem;
+  }
+
+  .navbar:hover .logo-text {
+    left: 0px;
+  } 
+}
+
+
+.theme-icon {
+  display: none;
+}
+
+.dark #darkIcon {
+  display: block;
+}
+
+.light #lightIcon {
+  display: block;
+}
+
+.solar #solarIcon {
+  display: block;
+}
